@@ -12,7 +12,15 @@ available, subscribing, and un-subscribing.
 
 ## Installation
 
-Execute:
+### Apache ZooKeeper:
+
+Reference the Apache ZooKeeper website on how to install/start the ZooKeeper service:
+
+  http://zookeeper.apache.org/
+
+### Ruby Gems:
+
+Set up the required Ruby Gems:
 
     $ bundle install
 
@@ -21,11 +29,13 @@ Execute:
 Start an instance of the Service Monitor (terminal instance #1):
 
     $ ruby lib/service_monitor.rb 192.168.1.10:2181  # include ip:port of the ZK server location
+
     # Service Monitor Initializing...    [ OK ]
 
 Start the simulator (terminal instance #2):
 
     $ ruby lib/simulator.rb 192.168.1.10:2181  # include ip:port of the ZK server location
+
     # Simulator Thread Initialized for Service ID: 0
     # Simulator Thread Initialized for Service ID: 1
     # Simulator Thread Initialized for Service ID: 2
