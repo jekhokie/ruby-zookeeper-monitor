@@ -1,4 +1,4 @@
-# ruby-zookeeper-example
+# ruby-zookeeper-monitor
 
 Example services monitor and corresponding simulator using Ruby and ZooKeeper.
 
