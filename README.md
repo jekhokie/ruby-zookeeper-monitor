@@ -24,7 +24,7 @@ Set up the required Ruby Gems:
 
     $ bundle install
 
-### Configurations:
+### Configuration:
 
 Update the following file to reflect the configuration for your environment:
 
