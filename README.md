@@ -24,6 +24,12 @@ Set up the required Ruby Gems:
 
     $ bundle install
 
+### Configurations:
+
+Update the following file to reflect the configuration for your environment:
+
+    $ vim config/settings
+
 ## Usage
 
 Start an instance of the Service Monitor (terminal instance #1):
