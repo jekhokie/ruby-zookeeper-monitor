@@ -1,3 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'zk'
+gem 'colorize'
+gem 'parseconfig'
+gem 'zookeeper'

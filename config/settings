@@ -1,0 +1,9 @@
+[global]
+zk_ip   = 10.11.12.10
+zk_port = 2181
+zk_path = /services
+
+[simulator]
+num_services = 12
+
+[monitor]
