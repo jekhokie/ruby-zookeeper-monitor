@@ -32,9 +32,15 @@ Update the following file to reflect the configuration for your environment:
 
 ## Usage
 
-The usage of this project is best performed in multiple (side-by-side) terminal windows.
+The usage of this project is best performed in multiple (side-by-side) terminal windows. There
+are 2 different monitors that can be utilized - the 'service' monitor and the 'terminal'
+monitor.
 
 ---
+
+### Service (Scrolling-Log) Monitor
+
+The Service monitor outputs the status of registered/un-registered services in a log-like fashion.
 
 Start an instance of the Service Monitor (terminal instance #1):
 
@@ -89,6 +95,44 @@ Watch the Service Monitor track the services as they come online/register and le
     # SERVICE (10.0.24.8) | Processing (4639) | Capacity remaining (5361)
     # ============================================================================
     ...
+
+---
+
+### Terminal ("top" command) Monitor
+
+The Terminal monitor outputs and updates the status of registered/un-registered services
+in-place (simulating the Linux "top" command).
+
+Start an instance of the Terminal Monitor - note that your screen will most likely
+go blank except for the "...Initializing..." message (terminal instance #1):
+
+    $ ruby lib/terminal_monitor.rb
+
+    # Terminal Monitor Initializing...    [ OK ]
+
+Start the simulator (terminal instance #2):
+
+    $ ruby lib/simulator.rb
+
+    # Simulator Thread Initialized for Service with IP: 10.0.24.2
+    # Simulator Thread Initialized for Service with IP: 10.0.24.3
+    # Simulator Thread Initialized for Service with IP: 10.0.24.4
+    # Simulator Thread Initialized for Service with IP: 10.0.24.5
+    # Simulator Thread Initialized for Service with IP: 10.0.24.6
+    ...
+
+Watch the Terminal Monitor track the services as they come online/register and leave/unregister -
+the services will automatically be added/removed/updated as they register/unregister/update (terminal instance #1):
+
+    =======================================================
+    | IP Address      | Processing      | Available       |
+    =======================================================
+    | 10.0.24.2       | 555             | 445             |
+    | 10.0.24.4       | 61              | 939             |
+    | 10.0.24.5       | 754             | 246             |
+    | 10.0.24.6       | 80              | 920             |
+    | 10.0.24.7       | 151             | 849             |
+    | 10.0.24.8       | 505             | 495             |
 
 ## Contributing
 
