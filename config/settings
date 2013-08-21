@@ -1,9 +1,21 @@
 [global]
-zk_ip   = 10.11.12.10
+# IP of the ZooKeeper service
+zk_ip = 10.11.12.10
+
+# Port on which the ZooKeeper service is listening
 zk_port = 2181
-zk_path = /services
+
+# Root path to the ephemeral nodes (registration) for services
+service_subscription_path = /services
+
+# Root path to the analytical information for a specific service
+service_analytics_path = /service
 
 [simulator]
+# Maximum number of services to simulate
 num_services = 12
+
+# Maximum capacity for a simulated service processing
+max_capacity = 10000
 
 [monitor]
