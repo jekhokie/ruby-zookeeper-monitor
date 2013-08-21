@@ -38,14 +38,14 @@ class Simulator
 
       @zk.create :path => "#{ZK_SERVICE}/#{@service_id}"
       @zk.create :path => "#{ZK_SERVICE}/#{@service_id}/processing"
-      @zk.create :path => "#{ZK_SERVICE}/#{@service_id}/capacity_remaining"
+      @zk.create :path => "#{ZK_SERVICE}/#{@service_id}/available"
 
       # modify the analytical data randomly
       (1 + rand(10)).times do |counter|
-        new_processing = 1 + rand(9999)
+        new_processing = 1 + rand(MAX_CAPACITY - 1)
 
-        @zk.set :path => "#{ZK_SERVICE}/#{@service_id}/processing",         :data => new_processing.to_s
-        @zk.set :path => "#{ZK_SERVICE}/#{@service_id}/capacity_remaining", :data => (MAX_CAPACITY - new_processing).to_s
+        @zk.set :path => "#{ZK_SERVICE}/#{@service_id}/processing", :data => new_processing.to_s
+        @zk.set :path => "#{ZK_SERVICE}/#{@service_id}/available",  :data => (MAX_CAPACITY - new_processing).to_s
 
         sleep rand(5)
       end
