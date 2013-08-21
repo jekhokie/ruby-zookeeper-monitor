@@ -89,7 +89,7 @@ class ServiceMonitor
   end
 
   ##
-  # Main method for the ServiceManager class
+  # Main method for the ServiceMonitor class
   #
   def run
     @zk.stat(:path => ZK_PATH, :watcher => @watcher) unless @stat.exists
