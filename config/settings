@@ -16,6 +16,6 @@ service_analytics_path = /service
 num_services = 12
 
 # Maximum capacity for a simulated service processing
-max_capacity = 10000
+max_capacity = 1000
 
 [monitor]
