@@ -1,9 +1,9 @@
 [global]
-zk_ip   = 10.11.12.10   # IP of the ZooKeeper service host
-zk_port = 2181          # Port for the ZooKeeper service
-zk_path = /services     # Root node under which services subscribe/are monitored
+zk_ip   = 10.11.12.10
+zk_port = 2181
+zk_path = /services
 
 [simulator]
-num_services = 12       # Number of services you wish to simulate
+num_services = 12
 
 [monitor]
